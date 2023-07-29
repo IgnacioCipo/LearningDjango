@@ -1,8 +1,16 @@
 from django.http import HttpResponse
 import datetime 
+from django.template import Template, Context
 
 def greetings(request):
-    return HttpResponse("<html><body><h1>Hello World from Django!</h1></body></html>")
+    name = "Ignacio"
+    lastname = "Cipolatti"
+    extern_doc = open("/home/cipo/Documents/LearningDjango/Project_1/Project_1/templates/my_template.html")
+    template = Template(extern_doc.read())
+    extern_doc.close()
+    ctx = Context({"personal_name": name, "personal_lastname": lastname})
+    renderized_doc = template.render(ctx)
+    return HttpResponse(renderized_doc)
 
 def goodbye(request):
     return HttpResponse("Goodbye!")
