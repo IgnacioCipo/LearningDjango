@@ -8,9 +8,13 @@
         <p><strong>Topics of the course:</strong></p>
         <p>
                 <ul>
-                {% for items in themes %}
-                        <li>{{items}}</li>
-                {% endfor %}
+                {% if themes %}
+                        {% for items in themes %}
+                                <li>{{items}}</li>
+                        {% endfor %}
+                {% else %}
+                        <p>There aren't items to show</p>
+                {% endif %}
                 </ul>
         </body>
 </html>
