@@ -4,5 +4,11 @@
         Hello World from Django with my first template!
         </h1>
         <p>My name is: {{personal_name}} {{personal_lastname}}</p>
+        <p>The time now is: {{current_time}}</p>
+        <p><strong>Topics of the course:</strong></p>
+        <p>
+                {% for items in themes %}
+                        <p>{{items}}</p>
+                {% endfor %}
         </body>
-        </html>
+</html>
