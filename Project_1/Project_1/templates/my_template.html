@@ -7,8 +7,10 @@
         <p>The time now is: {{current_time}}</p>
         <p><strong>Topics of the course:</strong></p>
         <p>
+                <ul>
                 {% for items in themes %}
-                        <p>{{items}}</p>
+                        <li>{{items}}</li>
                 {% endfor %}
+                </ul>
         </body>
 </html>
